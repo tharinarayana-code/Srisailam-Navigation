@@ -1,0 +1,598 @@
+/* ================= RESET & BASE ================= */
+html {
+  scroll-behavior: smooth;
+}
+
+footer {
+  padding-bottom: 120px; /* creates space for back-to-top button */
+}
+
+footer p,
+footer .developed-by {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #faf9f7;
+  padding: 0;
+  margin: 0;
+}
+
+/* ================= HEADER ================= */
+header {
+  background: linear-gradient(135deg, #ff9933 0%, #ff7722 100%);
+  color: white;
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+header > p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  opacity: 0.95;
+  font-weight: 400;
+}
+
+/* ================= LANGUAGE SELECTOR ================= */
+#language-selector {
+  margin: 16px 0;
+}
+
+#language-selector label {
+  font-size: 15px;
+  margin-right: 10px;
+  font-weight: 500;
+}
+
+#language-selector select {
+  font-size: 16px;
+  padding: 10px 14px;
+  border: 2px solid white;
+  border-radius: 8px;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+  min-width: 140px;
+  font-weight: 500;
+}
+
+#language-selector select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+/* ================= SEARCH BOX ================= */
+#search-box {
+  margin: 16px 0 0 0;
+}
+
+#searchInput {
+  width: 100%;
+  max-width: 500px;
+  font-size: 17px;
+  padding: 14px 18px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: white;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#searchInput::placeholder {
+  color: #999;
+  font-size: 16px;
+}
+
+#searchInput:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3), 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ================= FREE DARSHAN COUNTER ================= */
+#free-darshan-container {
+  margin: 20px 0 0 0;
+}
+
+#free-darshan-container button {
+  background-color: #fff;
+  color: #d84315;
+  border: 3px solid #d84315;
+  padding: 16px 28px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(216, 67, 21, 0.2);
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#free-darshan-container button:hover {
+  background-color: #d84315;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(216, 67, 21, 0.3);
+}
+
+#free-darshan-container button:active {
+  transform: translateY(0);
+}
+
+/* ================= MAIN CONTENT ================= */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* ================= CATEGORY SECTIONS ================= */
+section {
+  margin-bottom: 28px;
+}
+
+section h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #d84315;
+  padding: 16px 18px;
+  background-color: #fff;
+  border-left: 5px solid #ff9933;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Category Icon/Image */
+section h2 img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+/* ⬇️ ADD THE NEW CODE RIGHT HERE ⬇️ */
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+  header {
+    padding: 20px 12px;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  header > p {
+    font-size: 14px;
+  }
+
+  #searchInput {
+    font-size: 16px;
+    padding: 12px 16px;
+  }
+
+  #free-darshan-container button {
+    padding: 14px 24px;
+    font-size: 16px;
+    width: 100%; /* Full width on small screens */
+  }
+
+  section h2 {
+    font-size: 20px;
+    padding: 14px 16px;
+  }
+
+  section ul li {
+    padding: 16px 16px;
+  }
+
+  section ul li strong {
+    font-size: 17px;
+  }
+
+  button {
+    width: 100%; /* Full width buttons on mobile */
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+
+  #back-to-top {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    font-size: 22px;
+  }
+
+  #language-selector select {
+    min-width: 120px;
+    padding: 10px 12px;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  section h2 {
+    font-size: 18px;
+  }
+
+  #free-darshan-container button {
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+}
+
+/* Improve touch targets for all interactive elements */
+@media (hover: none) and (pointer: coarse) {
+  /* Mobile/touch devices */
+  button, 
+  section h2, 
+  section ul li strong,
+  #searchInput,
+  #language-selector select {
+    min-height: 44px; /* Apple's recommended touch target */
+  }
+}
+section h2:hover {
+  background-color: #fff5f0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+section h2:active {
+  transform: scale(0.98);
+}
+
+/* ================= LOCATION LISTS ================= */
+section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+section ul li {
+  padding: 18px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+section ul li:last-child {
+  border-bottom: none;
+}
+
+section ul li strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+section ul li strong:hover {
+  color: #ff7722;
+}
+
+/* ================= LOCATION DETAILS ================= */
+section ul li div {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+section ul li div p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #555;
+  margin: 8px 0 14px 0;
+  max-width: 100%;
+}
+
+/* ================= NAVIGATION BUTTONS ================= */
+button {
+  background-color: #ff7722;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(255, 119, 34, 0.3);
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+button:hover {
+  background-color: #ff9933;
+  box-shadow: 0 4px 10px rgba(255, 119, 34, 0.4);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* ================= HORIZONTAL RULES ================= */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 24px 0;
+}
+
+/* ================= SEARCH RESULTS ================= */
+#search-results {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+#search-results h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #d84315;
+  margin-bottom: 16px;
+}
+
+#search-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#search-list li {
+  background-color: white;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #ff9933;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+#search-list li strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  padding: 4px 0;
+  transition: color 0.2s ease;
+}
+
+#search-list li strong:hover {
+  color: #ff7722;
+}
+
+#search-list li div {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* ================= BACK TO TOP BUTTON ================= */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    
+    /* Flexbox centers the SVG icon perfectly */
+    display: flex; /* Note: JS toggles this to 'flex' or 'none' */
+    align-items: center;
+    justify-content: center;
+    
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Removes any underline lines */
+}
+
+/* Base size for the icon inside the button */
+#back-to-top svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 3px; /* Default thickness */
+}
+
+#back-to-top:hover {
+    background-color: #cc5200;
+}
+
+/* Mobile - Make it BIG and BOLD for common users */
+@media (max-width: 768px) {
+    #back-to-top {
+        bottom: 130px; /* aligns just above footer text */
+        right: 20px;
+    }
+}
+
+
+    #back-to-top svg {
+        width: 36px;  /* Icon size */
+        height: 36px;
+        stroke-width: 4px; /* EXTRA THICK lines */
+    }
+
+
+/* Small screens */
+@media (max-width: 480px) {
+    #back-to-top {
+        bottom: 150px; /* between footer and credits */
+        right: 16px;
+    }
+}
+
+
+    
+    #back-to-top svg {
+        width: 32px;
+        height: 32px;
+        stroke-width: 4px; /* Still keeping it thick */
+    }
+
+
+/* ================= FOOTER ================= */
+footer {
+  background-color: #f5f5f5;
+  padding: 20px 16px;
+  margin-top: 40px;
+  border-top: 1px solid #e0e0e0;
+}
+
+footer p {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Tablet and larger */
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 32px;
+  }
+
+  header > p {
+    font-size: 16px;
+  }
+
+  #searchInput {
+    font-size: 18px;
+    padding: 16px 20px;
+  }
+
+  section h2 {
+    font-size: 24px;
+    padding: 18px 22px;
+  }
+
+  section ul li strong {
+    font-size: 19px;
+  }
+
+  section ul li div p {
+    font-size: 16px;
+  }
+
+  #back-to-top {
+    width: 56px;
+    height: 56px;
+    line-height: 56px;
+    font-size: 26px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  header h1 {
+    font-size: 36px;
+  }
+
+  section h2 {
+    font-size: 26px;
+  }
+
+  section ul li strong {
+    font-size: 20px;
+  }
+}
+.category-icon {
+  font-size: 28px;
+  margin-right: 12px;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+/* If using image icons instead */
+section h2 img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  margin-right: 12px;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+}
+/* ================= SEARCH CLEAR BUTTON ================= */
+#clearSearch {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: none;
+  margin: 0;
+}
+
+#clearSearch:hover {
+  background-color: #f0f0f0;
+  color: #d84315;
+  transform: translateY(-50%) scale(1.1);
+}
+
+#clearSearch:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Adjust search input padding to make room for X button */
+#searchInput {
+  padding-right: 48px !important;
+}
+
+
+
