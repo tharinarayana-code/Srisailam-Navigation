@@ -153,11 +153,18 @@
     </div>
 </footer>
 
+
 <script>
+  
 /* ================= GLOBAL STATE ================= */
 let locationsData = [];
 let currentLang = "en";
 let searchQuery = "";
+let openCategoryList = null; // tracks currently opened category list
+let openLocationDetails = null; // tracks open location description
+
+// ================= HISTORY INIT (iOS SUPPORT) =================
+history.replaceState({ level: "home" }, "");
 
 /* ================= STATIC UI TRANSLATIONS ================= */
 const STATIC_TRANSLATIONS = {
@@ -366,12 +373,25 @@ function renderApp() {
     const ul = document.createElement("ul");
     ul.style.display = "none";
 
-    h.onclick = () => {
-      const isOpen = ul.style.display === "block";
-      document.querySelectorAll("#app ul").forEach(u => u.style.display = "none");
-      document.querySelectorAll("#app ul div").forEach(d => d.style.display = "none");
-      ul.style.display = isOpen ? "none" : "block";
-    };
+  h.onclick = () => {
+  const isOpen = ul.style.display === "block";
+
+  // Close all categories & location details
+  document.querySelectorAll("#app ul").forEach(u => u.style.display = "none");
+  document.querySelectorAll("#app ul div").forEach(d => d.style.display = "none");
+
+  if (!isOpen) {
+    ul.style.display = "block";
+
+    // ⬅ push CATEGORY level
+    history.pushState({ level: "category" }, "");
+  } else {
+    ul.style.display = "none";
+  }
+};
+
+
+
 
     grouped[cat].forEach(l => {
       const li = document.createElement("li");
@@ -402,10 +422,23 @@ function renderApp() {
       details.append(btn);
 
       name.onclick = () => {
-        const isOpen = details.style.display === "block";
-        ul.querySelectorAll("div").forEach(d => d.style.display = "none");
-        details.style.display = isOpen ? "none" : "block";
-      };
+  const isOpen = details.style.display === "block";
+
+  // Close other open locations in this category
+  ul.querySelectorAll("div").forEach(d => d.style.display = "none");
+
+  if (!isOpen) {
+    details.style.display = "block";
+
+    // ⬅ push LOCATION level
+    history.pushState({ level: "location" }, "");
+  } else {
+    details.style.display = "none";
+  }
+};
+
+
+
 
       li.append(name, details);
       ul.append(li);
@@ -524,6 +557,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+// ================= FINAL BACK / SWIPE HANDLING =================
+window.addEventListener("popstate", () => {
+
+  // 1️⃣ If a LOCATION description is open → close it
+  const openLocation = document.querySelector(
+    '#app ul li div[style*="block"]'
+  );
+  if (openLocation) {
+    openLocation.style.display = "none";
+    return;
+  }
+
+  // 2️⃣ Else if a CATEGORY list is open → close it
+  const openCategory = document.querySelector(
+    '#app ul[style*="block"]'
+  );
+  if (openCategory) {
+    openCategory.style.display = "none";
+    return;
+  }
+
+  // 3️⃣ Else → allow browser to exit
+});
+
+
 </script>
 </body>
 </html>
