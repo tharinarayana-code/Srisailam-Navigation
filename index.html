@@ -308,7 +308,7 @@ function renderFreeDarshan() {
   container.innerHTML = "";
 
   const free = locationsData.find(
-    l => l.category === "FREE_DARSHAN_COUNTER"
+    l => l.category === "SARVA DARSHANAM ENTRANCE"
   );
   if (!free) return;
 
@@ -352,7 +352,7 @@ function renderApp() {
 
   const grouped = {};
   locationsData
-    .filter(l => l.category !== "FREE_DARSHAN_COUNTER")
+    .filter(l => l.category !== "SARVA DARSHANAM ENTRANCE")
     .forEach(l => (grouped[l.category] ||= []).push(l));
 
   for (const cat in grouped) {
@@ -389,10 +389,6 @@ function renderApp() {
     ul.style.display = "none";
   }
 };
-
-
-
-
     grouped[cat].forEach(l => {
       const li = document.createElement("li");
 
@@ -436,10 +432,6 @@ function renderApp() {
     details.style.display = "none";
   }
 };
-
-
-
-
       li.append(name, details);
       ul.append(li);
     });
@@ -455,7 +447,7 @@ function renderSearchResults() {
   list.innerHTML = "";
 
   const results = locationsData
-    .filter(l => l.category !== "FREE_DARSHAN_COUNTER")
+    .filter(l => l.category !== "SARVA DARSHANAM ENTRANCE")
     .filter(matchesSearch);
 
   if (results.length === 0) {
@@ -580,6 +572,7 @@ window.addEventListener("popstate", () => {
 
   // 3️⃣ Else → allow browser to exit
 });
+
 
 </script>
 </body>
